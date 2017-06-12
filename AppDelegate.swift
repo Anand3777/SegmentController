@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow()
+        
+        let vcRoot = UITabBarController()
+        let vc1 = ViewController()
+        vc1.tabBarItem.title = "item 1"
+        let vc2 = ViewController2()
+        vc2.tabBarItem.title = "item 2"
+        vcRoot.setViewControllers([vc1, vc2], animated: false)
+        
+        window?.rootViewController = vcRoot
+        window?.backgroundColor = UIColor.white
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
